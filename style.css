@@ -980,7 +980,7 @@ textarea {
 
 .site-branding .site-title {
     margin: 0;
-    font-family: 'Georgia', serif; /* O la fuente de tu marca */
+    font-family: 'Georgia', serif; 
     font-size: 2.2em;
     color: #FF69B4; /* Rosa brillante para el logo */
 }
@@ -995,7 +995,7 @@ textarea {
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 25px; /* Espacio entre los elementos del menú */
+    gap: 25px; 
 }
 
 .main-navigation li a {
@@ -1042,7 +1042,7 @@ textarea {
     justify-content: center;
     background-color: #fce4ec; /* Fondo rosa claro del banner */
     padding: 80px 40px;
-    min-height: 500px; /* Altura mínima del banner */
+    min-height: 500px;
 }
 
 .home-banner .content-left {
@@ -1108,6 +1108,680 @@ textarea {
 .home-banner .image-right img {
     max-width: 100%;
     height: auto;
-    border-radius: 15px; /* Bordes redondeados para la imagen */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra para resaltar la imagen */
+    border-radius: 15px; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+}
+
+/* Estilos para Beneficios */
+.home-features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 40px;
+    background-color: #ffffff;
+    gap: 30px;
+}
+
+.feature-item {
+    flex-basis: 30%; 
+    text-align: center;
+    padding: 25px 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    color: #E91E63; 
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-item h4 {
+    font-size: 1.1em;
+    margin-top: 5px;
+    color: #444;
+}
+
+.feature-item p {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 0;
+}
+
+
+/* ESTILOS DE LA SECCIÓN CTA */
+.featured-product-cta {
+    background-color: #E91E63; /* Fondo rojo fuerte */
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 40px;
+    margin: 40px auto; 
+    border-radius: 10px; 
+    max-width: 1200px; 
+}
+
+.featured-product-cta h2 {
+    color: #ffffff;
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+.featured-product-cta p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.featured-product-cta .cta-button {
+    background-color: #ffffff; 
+    color: #E91E63; 
+    padding: 15px 35px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: 2px solid #ffffff; 
+}
+
+.featured-product-cta .cta-button:hover {
+    background-color: #fff0f5; 
+}
+
+
+/* ESTILOS DEL FOOTER */
+
+.site-footer {
+    background-color: #C06C84; /* Color de fondo oscuro para el footer */
+    color: #ffffff;
+    padding: 40px 40px 20px;
+}
+
+.footer-widgets {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-column {
+    flex-basis: 30%;
+}
+
+.footer-column h4 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.footer-column p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.footer-column i {
+    margin-right: 8px;
+    color: #E91E63; 
+}
+
+.site-info {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.8em;
+    color: #f0f0f0;
+}
+
+/* ============================================================
+   ✨ DULCIELA — HEADER COMPLETO ESTILIZADO (OPTIMIZADO FINAL)
+   ============================================================ */
+
+.dulciela-header {
+    background: linear-gradient(to right, #ffffff, #ffe4f1);
+    padding: 15px 25px;
+    border-bottom: 3px solid #ffd3e6;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.dulciela-header .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* ============================
+   LOGO
+   ============================ */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff2b6e, #ff7aa8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 22px;
+    box-shadow: 0 4px 10px rgba(255,43,110,0.35);
+}
+
+.logo-text .title {
+    font-size: 1.9em;
+    margin: 0;
+    font-weight: 900;
+    color: #d81b60;
+}
+
+.logo-text .subtitle {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: -3px;
+}
+
+/* ============================
+   BUSCADOR
+   ============================ */
+.search-area form {
+    width: 360px;
+    display: flex;
+    padding: 8px 15px;
+    background: #fff;
+    border-radius: 35px;
+    border: 1px solid #ffd0e3;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.search-area input[type="search"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1em;
+}
+
+.search-area button {
+    background: none;
+    border: none;
+    color: #ff2b6e;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* ============================
+   ACCIONES DERECHA
+   ============================ */
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.header-btn:hover {
+    color: #e91e63;
+}
+
+.cart-bubble {
+    background: #ff2b6e;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+/* ============================================================
+   ✨ MENÚ PRINCIPAL (NAV)
+   ============================================================ */
+
+.main-menu {
+    padding: 12px 0;
+    background: #ffffffcc;
+    border-top: 1px solid #f3d6e8;
+    backdrop-filter: blur(10px);
+}
+
+.main-menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu a {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #444;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.main-menu a:hover {
+    background: #ffe1ef;
+    color: #e91e63;
+}
+
+.main-menu .current-menu-item > a {
+    background: #ffd7ea;
+    color: #e91e63;
+}
+
+@media (max-width: 850px) {
+    .main-menu ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   ✨ BANNER PRINCIPAL
+   ============================================================ */
+
+.home-banner {
+    margin-top: 20px;
+    border-radius: 25px;
+    background: linear-gradient(to right, #ffffff, #ffe6f2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.home-banner .content-left {
+    padding: 50px;
+}
+
+.home-banner h1 {
+    font-size: 3.3rem;
+    color: #ff2b6e !important;
+}
+
+.home-banner p {
+    font-size: 1.2em;
+    color: #555 !important;
+}
+
+/* ============================================================
+   ✨ PRODUCT CARDS
+   ============================================================ */
+
+.products .product,
+.woocommerce ul.products li.product {
+    background: #ffffff;
+    border: 1px solid #ffd0e3;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    padding: 0 !important;
+    transition: 0.3s;
+}
+
+.products .product:hover,
+.woocommerce ul.products li.product:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Precio */
+.woocommerce ul.products li.product .price {
+    color: #ff2b6e !important;
+    font-weight: 700;
+}
+
+/* Botón Agregar */
+.woocommerce ul.products li.product .button {
+    background: linear-gradient(45deg, #ff2b6e, #ff6fa0);
+    color: white;
+    border-radius: 40px;
+    padding: 12px;
+    font-weight: 600;
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+    box-shadow: 0 6px 14px rgba(255,43,110,0.35);
+    transition: 0.3s;
+}
+
+.woocommerce ul.products li.product .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,43,110,0.45);
+}
+
+/* Sale label */
+.woocommerce span.onsale {
+    background: #ff2b6e !important;
+    padding: 5px 12px;
+    border-radius: 10px;
+}
+
+/* ============================================================
+   ✨ FEATURE CARDS
+   ============================================================ */
+
+.feature-item {
+    background: linear-gradient(to bottom, #fff, #fff2fa);
+    padding: 30px 25px;
+    border-radius: 18px;
+    border: 1px solid #ffe2f0;
+}
+
+.feature-icon {
+    background: #ffe3ef;
+    padding: 18px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+/* ============================================================
+   ✨ CTA SECTION
+   ============================================================ */
+
+.custom-cake-cta,
+.featured-product-cta {
+    background: linear-gradient(45deg, #ff2b6e, #ff6fa0);
+    padding: 60px 30px;
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(255,43,110,0.4);
+}
+
+.cta-btn {
+    background: #ffffff;
+    color: #ff2b6e;
+    padding: 14px 35px;
+    border-radius: 40px;
+    font-weight: 700;
+}
+
+.cta-btn:hover {
+    background: #ffe6f0 !important;
+}
+
+/* ============================================================
+   ✨ FOOTER
+   ============================================================ */
+
+.site-footer {
+    background: linear-gradient(to right, #d81b60, #ab1763);
+    color: white;
+    padding: 50px 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    color: #ffd9ef;
+}
+
+/* ============================================================
+   ✨ PRODUCTOS / TIENDA (WooCommerce)
+   ============================================================ */
+
+.woocommerce-page {
+    background: linear-gradient(to bottom, #fff8fb, #ffe6f2);
+    padding-top: 40px;
+}
+
+.woocommerce-products-header h1 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #c2185b;
+}
+
+/* Chips de categorías */
+.woocommerce .product-categories a,
+.woocommerce .term-buttons a {
+    background: #fff;
+    border: 2px solid #ffe0ed;
+    border-radius: 40px;
+    padding: 10px 18px;
+    color: #444;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.woocommerce .product-categories a:hover {
+    background: #ffe8f2;
+    border-color: #ff2b6e;
+}
+
+.woocommerce .product-categories .current-cat > a {
+    background: #ff2b6e;
+    color: #fff;
+    border-color: #ff2b6e;
+}
+
+.woocommerce ul.products {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+    gap: 30px !important;
+}
+
+@media (max-width: 768px) {
+    .woocommerce-products-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ================================================
+   FOOTER DULCIELA — ESTÉTICO, ALINEADO Y RESPONSIVE
+   ================================================ */
+
+.site-footer {
+    background: linear-gradient(to right, #d81b60, #ab1763);
+    padding: 50px 0 5px;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Contenedor general */
+.footer-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Cada columna */
+.footer-section h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.footer-section p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: #ffe1f0;
+}
+
+.footer-section i {
+    margin-right: 8px;
+    color: #ffd6e8;
+}
+
+/* Línea inferior */
+.footer-bottom {
+    margin-top: 35px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.footer-bottom p {
+    color: #ffd9ef;
+    font-size: 0.9rem;
+}
+
+/* ================================
+   RESPONSIVE — MÓVIL
+   ================================ */
+@media (max-width: 768px) {
+    .footer-content-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section i {
+        margin-right: 5px;
+    }
+}
+
+/* ============================================================
+   ✨ DULCIELA — REPARACIÓN COMPLETA DEL BANNER Y LAYOUT
+   ============================================================ */
+
+/* ----- Ajuste general del contenedor ----- */
+.home-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+    background: linear-gradient(to right, #ffe8f3, #ffeef8);
+    border-radius: 25px;
+    margin-top: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ----- Columna izquierda ----- */
+.banner-left {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.banner-left h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: #d81b60;
+    margin-bottom: 15px;
+}
+
+.banner-left p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.banner-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* ----- Botones ----- */
+.banner-buttons .btn {
+    padding: 14px 35px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.banner-buttons .primary {
+    background: linear-gradient(45deg, #ff2b6e, #ff6fa0);
+    color: #fff;
+    border: none;
+    box-shadow: 0 5px 15px rgba(255,43,110,0.3);
+}
+
+.banner-buttons .primary:hover {
+    transform: translateY(-3px);
+}
+
+.banner-buttons .secondary {
+    background: #fff;
+    color: #ff2b6e;
+    border: 2px solid #ff2b6e;
+}
+
+.banner-buttons .secondary:hover {
+    background: #ffe8f2;
+}
+
+/* ----- Columna derecha ----- */
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-right img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ============================================================
+   ✨ secciones inferiores (feature cards)
+   ============================================================ */
+
+.home-features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 90px;
+    padding: 20px 80px;
+}
+
+.home-features .feature {
+    text-align: center;
+    flex: 1;
+}
+
+.home-features .feature i {
+    font-size: 30px;
+    color: #d81b60;
+    margin-bottom: 10px;
+}
+
+.home-features .feature h4 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* ============================================================
+   ✨ Espaciado global
+   ============================================================ */
+
+.site-main {
+    padding-top: 20px !important;
+}
+
+body {
+    background: #fff8fb;
 }

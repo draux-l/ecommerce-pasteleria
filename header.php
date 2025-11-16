@@ -1,50 +1,69 @@
+<?php
+/**
+ * Header Dulciela Theme
+ */
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-    <?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <!-- Fuentes e íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-    <header id="masthead" class="site-header">
-        <div class="site-branding">
-            <?php
-            // Aquí va el logo o el título de tu sitio
-            if ( has_custom_logo() ) {
-                the_custom_logo();
-            } else {
-                echo '<p class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></p>';
-            }
-            ?>
-        </div><nav id="site-navigation" class="main-navigation">
-            <?php
-            wp_nav_menu( array(
-                'theme_location' => 'menu-principal', // Registrarás este menú en functions.php
-                'menu_id'        => 'primary-menu',
-            ) );
-            ?>
-        </nav><div class="header-actions">
-            <div class="search-form">
-    <?php 
-    // Verifica si la función de WooCommerce existe antes de llamarla
-    if ( function_exists( 'get_product_search_form' ) ) {
-        get_product_search_form();
-    }
-    ?>
-</div>
-            <div class="header-cart">
-                <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="my-account-link">Mi Cuenta</a>
-                <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="cart-contents">
-                    <?php echo WC()->cart->get_cart_total(); ?>
-                    <span class="count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                    Carrito
-                </a>
+
+<header class="dulciela-header">
+
+    <div class="header-inner">
+
+        <!-- LOGO -->
+        <a class="logo-area" href="<?php echo esc_url( home_url('/') ); ?>">
+            <div class="logo-icon">
+                <i class="fa-solid fa-cake-candles"></i>
             </div>
+            <div class="logo-text">
+                <span class="title">Dulciela</span>
+                <span class="subtitle">Pastelería Artesanal</span>
+            </div>
+        </a>
+
+        <!-- BUSCADOR -->
+        <div class="search-area">
+            <?php get_product_search_form(); ?>
         </div>
 
-    </header>```
+        <!-- ACCIONES DERECHA -->
+        <div class="right-actions">
+            <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" class="header-btn">
+                <i class="fa-regular fa-user"></i>
+                <span>Mi Cuenta</span>
+            </a>
 
+            <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-btn cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Carrito</span>
+                <span class="cart-bubble"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MENÚ -->
+    <nav class="main-menu">
+        <?php
+        wp_nav_menu([
+            'theme_location' => 'menu-1',
+            'container'      => false
+        ]);
+        ?>
+    </nav>
+
+</header>
+
+<div id="content" class="site-content">
