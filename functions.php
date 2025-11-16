@@ -180,3 +180,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function dulciela_register_menus() {
+    register_nav_menus([
+        'primary-menu' => __('Menú Principal Dulciela', 'dulciela'),
+    ]);
+}
+add_action('init', 'dulciela_register_menus');

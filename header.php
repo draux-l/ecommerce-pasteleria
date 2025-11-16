@@ -58,7 +58,7 @@
     <nav class="main-menu">
         <?php
         wp_nav_menu([
-            'theme_location' => 'menu-1',
+            'theme_location' => 'primary-menu',
             'container'      => false
         ]);
         ?>

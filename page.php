@@ -14,9 +14,8 @@
 
 get_header();
 
-if ( is_front_page() ) {
-    // Si la página actual es la portada estática configurada en Ajustes > Lectura
-    // FORZAMOS la inclusión del archivo de diseño.
+if ( is_page_template('page-home.php') ) {
+
     include( get_template_directory() . '/page-home.php' ); 
 } else {
     // Para todas las demás páginas (Nosotros, Contacto, etc.)

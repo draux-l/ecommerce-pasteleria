@@ -6,7 +6,7 @@
 
 get_header();
 ?>
-
+    
 <section class="home-banner">
     <div class="banner-left">
         <h1>Dulciela</h1>
