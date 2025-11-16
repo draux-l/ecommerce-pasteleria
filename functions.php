@@ -186,3 +186,27 @@ function dulciela_register_menus() {
     ]);
 }
 add_action('init', 'dulciela_register_menus');
+
+
+function dulciela_scripts() {
+    wp_enqueue_script(
+        'mini-cart-js',
+        get_stylesheet_directory_uri() . '/js/mini-cart.js',
+        ['jquery'],
+        false,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'dulciela_scripts');
+
+function dulciela_enqueue_dashboard_styles() {
+    if ( is_account_page() ) { 
+        wp_enqueue_style(
+            'dulciela-dashboard-style',
+            get_stylesheet_directory_uri() . '/dashboard.css',
+            array(),
+            '1.0'
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'dulciela_enqueue_dashboard_styles' );

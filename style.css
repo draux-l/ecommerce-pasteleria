@@ -1981,3 +1981,76 @@ body {
     transform: scale(1.1);
     background: #1ebe5d;
 }
+
+
+/* Fondo oscuro */
+.mini-cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+/* Panel lateral */
+.mini-cart-panel {
+    position: absolute;
+    right: -400px;
+    top: 0;
+    width: 380px;
+    height: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px 0 0 8px;
+    transition: 0.35s;
+}
+
+/* Mostrar panel */
+.mini-cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mini-cart-overlay.active .mini-cart-panel {
+    right: 0;
+}
+
+/* Cerrar */
+.mini-cart-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    float: right;
+    cursor: pointer;
+}
+
+/* Vacío */
+.empty-cart {
+    text-align: center;
+    margin-top: 40%;
+}
+
+.empty-title {
+    font-size: 22px;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.empty-text {
+    color: #555;
+    margin-top: 5px;
+}
+
+.btn.go-shop {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 22px;
+    background: #8B4513;
+    color: #fff;
+    border-radius: 6px;
+}

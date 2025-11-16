@@ -46,11 +46,11 @@
                 <span>Mi Cuenta</span>
             </a>
 
-            <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-btn cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span>Carrito</span>
-                <span class="cart-bubble"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-            </a>
+            <a href="#" id="open-mini-cart" class="header-btn cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span>Carrito</span>
+    <span class="cart-bubble"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+</a>
         </div>
     </div>
 
@@ -65,5 +65,6 @@
     </nav>
 
 </header>
+<?php get_template_part('woocommerce/cart/mini-cart'); ?>
 
 <div id="content" class="site-content">
