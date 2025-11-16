@@ -967,3 +967,147 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/* --- Estilos para el Encabezado --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.site-branding .site-title {
+    margin: 0;
+    font-family: 'Georgia', serif; /* O la fuente de tu marca */
+    font-size: 2.2em;
+    color: #FF69B4; /* Rosa brillante para el logo */
+}
+
+.site-branding .site-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Espacio entre los elementos del menú */
+}
+
+.main-navigation li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.main-navigation li a:hover {
+    color: #FF69B4; /* Color rosa al pasar el mouse */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-form input[type="search"] {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.header-cart a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-cart a:hover {
+    color: #FF69B4;
+}
+
+/* Estilos para el banner de la página de inicio */
+#main .home-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fce4ec; /* Fondo rosa claro del banner */
+    padding: 80px 40px;
+    min-height: 500px; /* Altura mínima del banner */
+}
+
+.home-banner .content-left {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.home-banner .content-left h1 {
+    font-size: 3.5em;
+    color: #FF69B4;
+    margin-bottom: 10px;
+}
+
+.home-banner .content-left p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.home-banner .buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.home-banner .button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.home-banner .button.primary {
+    background-color: #FF69B4; /* Rosa principal */
+    color: #ffffff;
+}
+
+.home-banner .button.primary:hover {
+    background-color: #e05c9f;
+}
+
+.home-banner .button.secondary {
+    background-color: #ffffff;
+    color: #FF69B4;
+    border: 2px solid #FF69B4;
+}
+
+.home-banner .button.secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.home-banner .image-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-banner .image-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra para resaltar la imagen */
+}
