@@ -1,0 +1,152 @@
+/* =============================
+   DASHBOARD – MI CUENTA
+   ============================= */
+
+.myaccount-dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 10px 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(to right,#fff6e8,#ffecd1);
+    padding: 28px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.dashboard-header * {
+    margin: 0;
+}
+
+.dashboard-icon {
+    background: #c06b00;
+    color: white;
+    padding: 22px;
+    font-size: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-greeting h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dashboard-greeting p {
+    font-size: 15px;
+    color: #444;
+}
+
+/* GRID */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* CARDS */
+.dashboard-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+}
+
+.big-card {
+    grid-row: span 2;
+}
+
+.small-card {
+    text-align: center;
+}
+
+.small-card .dashboard-icon-sm {
+    font-size: 32px;
+    color: #c06b00;
+    margin-bottom: 8px;
+}
+
+.small-card h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #c06b00;
+}
+
+.full-card {
+    grid-column: span 4;
+}
+
+.recent-orders h3 {
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.settings-btn,
+.logout-btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.settings-btn {
+    background: #f2f2f2;
+    color: #333;
+}
+
+.logout-btn {
+    background: #ffe0e0;
+    color: #b10000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .full-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .full-card {
+        grid-column: span 1;
+    }
+    .big-card {
+        grid-row: auto;
+    }
+}
+
+/* Ocultar título "My account" arriba */
+.woocommerce-account .entry-title {
+    display: none !important;
+}
+
+/* Centrar contenido WooCommerce */
+.woocommerce-account .woocommerce {
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 0 20px;
+}

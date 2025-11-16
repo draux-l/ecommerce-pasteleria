@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after.
+ * Contiene el cierre de #content y todos los elementos después.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -11,22 +11,35 @@
 
 ?>
 
+	</div><!-- #content -->
+
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dulciela-tema' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'dulciela-tema' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'dulciela-tema' ), 'dulciela-tema', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+        <div class="footer-content-container">
+            <div class="footer-section about-us">
+                <h4>Dulciela</h4>
+                <p>Pastelería artesanal con más de 8 años de experiencia. Tortas y postres hechos con amor.</p>
+            </div>
+
+            <div class="footer-section contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Larco 1234, Miraflores</p>
+                <p><i class="fas fa-phone"></i> (01) 234-5678</p>
+                <p><i class="fas fa-envelope"></i> info@dulciela.com</p>
+            </div>
+
+            <div class="footer-section hours">
+                <h4>Horarios</h4>
+                <p>Lunes - Viernes: 8am - 8pm</p>
+                <p>Sábados: 9am - 9pm</p>
+                <p>Domingo: 9am - 6pm</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <?php echo date('Y'); ?> Dulciela - Todos los derechos reservados</p>
+        </div>
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
 

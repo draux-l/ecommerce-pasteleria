@@ -1,14 +1,7 @@
 <?php
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package dulciela_tema
+ * Header Dulciela Theme
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -17,43 +10,61 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+    <!-- Fuentes e íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'dulciela-tema' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$dulciela_tema_description = get_bloginfo( 'description', 'display' );
-			if ( $dulciela_tema_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $dulciela_tema_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+<header class="dulciela-header">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dulciela-tema' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <div class="header-inner">
+
+        <!-- LOGO -->
+        <a class="logo-area" href="<?php echo esc_url( home_url('/') ); ?>">
+            <div class="logo-icon">
+                <i class="fa-solid fa-cake-candles"></i>
+            </div>
+            <div class="logo-text">
+                <span class="title">Dulciela</span>
+                <span class="subtitle">Pastelería Artesanal</span>
+            </div>
+        </a>
+
+        <!-- BUSCADOR -->
+        <div class="search-area">
+            <?php get_product_search_form(); ?>
+        </div>
+
+        <!-- ACCIONES DERECHA -->
+        <div class="right-actions">
+            <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" class="header-btn">
+                <i class="fa-regular fa-user"></i>
+                <span>Mi Cuenta</span>
+            </a>
+
+            <a href="#" id="open-mini-cart" class="header-btn cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span>Carrito</span>
+    <span class="cart-bubble"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+</a>
+        </div>
+    </div>
+
+    <!-- MENÚ -->
+    <nav class="main-menu">
+        <?php
+        wp_nav_menu([
+            'theme_location' => 'primary-menu',
+            'container'      => false
+        ]);
+        ?>
+    </nav>
+
+</header>
+<?php get_template_part('woocommerce/cart/mini-cart'); ?>
+
+<div id="content" class="site-content">
