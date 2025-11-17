@@ -1,74 +1,63 @@
 <?php
 /**
- * La plantilla para mostrar el contenido de UN producto individual.
+ * Template part for displaying posts
  *
- * Ruta: /themes/dulciela-tema/woocommerce/content-single-product.php
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * Esta plantilla llama a todos los "hooks" necesarios para mostrar
- * la imagen, el resumen (título, precio, estrellas, botón) 
- * y las pestañas (descripción, reseñas).
+ * @package dulciela_tema
  */
 
-defined( 'ABSPATH' ) || exit;
-
-global $product;
 ?>
 
-<?php
-    /**
-     * Hook: woocommerce_before_single_product.
-     *
-     * @hooked wc_print_notices - 10
-     */
-    do_action( 'woocommerce_before_single_product' );
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php
+		if ( is_singular() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
 
-    if ( post_password_required() ) {
-        echo get_the_password_form(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        return;
-    }
-?>
+		if ( 'post' === get_post_type() ) :
+			?>
+			<div class="entry-meta">
+				<?php
+				dulciela_tema_posted_on();
+				dulciela_tema_posted_by();
+				?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
+	</header><!-- .entry-header -->
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'dulciela-single-product', $product ); ?>>
+	<?php dulciela_tema_post_thumbnail(); ?>
 
-    <div class="product-gallery-wrapper">
-        <?php
-        /**
-         * Hook: woocommerce_before_single_product_summary.
-         *
-         * @hooked woocommerce_show_product_sale_flash - 10
-         * @hooked woocommerce_show_product_images - 20 (La galería de imágenes)
-         */
-        do_action( 'woocommerce_before_single_product_summary' );
-        ?>
-    </div>
+	<div class="entry-content">
+		<?php
+		the_content(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dulciela-tema' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				wp_kses_post( get_the_title() )
+			)
+		);
 
-    <div class="product-summary-wrapper">
-        <?php
-        /**
-         * Hook: woocommerce_single_product_summary.
-         *
-         * @hooked woocommerce_template_single_title - 5
-         * @hooked woocommerce_template_single_rating - 10 (Estrellas de valoración)
-         * @hooked woocommerce_template_single_price - 10
-         * @hooked woocommerce_template_single_excerpt - 20 (Descripción corta)
-         * @hooked woocommerce_template_single_add_to_cart - 30 (Botón de añadir al carrito)
-         * @hooked woocommerce_template_single_meta - 40 (Categorías, etc)
-         * @hooked woocommerce_template_single_sharing - 50
-         */
-        do_action( 'woocommerce_single_product_summary' );
-        ?>
-    </div>
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dulciela-tema' ),
+				'after'  => '</div>',
+			)
+		);
+		?>
+	</div><!-- .entry-content -->
 
-    <?php
-    /**
-     * Hook: woocommerce_after_single_product_summary.
-     *
-     * @hooked woocommerce_output_product_data_tabs - 10 (Pestañas de Descripción/Reseñas)
-     * @hooked woocommerce_upsell_display - 15
-     * @hooked woocommerce_output_related_products - 20
-     */
-    do_action( 'woocommerce_after_single_product_summary' );
-    ?>
-</div>
-
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+	<footer class="entry-footer">
+		<?php dulciela_tema_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-<?php the_ID(); ?> -->
