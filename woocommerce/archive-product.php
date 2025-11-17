@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
 get_header( 'shop' );
 ?>
 
-<div class="dulciela-shop-wrapper">
+<div class="dulciela-shop-wrapper woocommerce">
 
     <!-- =======================================================
          🎀 ENCABEZADO DE CATEGORÍAS (chips)
@@ -66,25 +66,24 @@ get_header( 'shop' );
     ======================================================== -->
     <?php if ( woocommerce_product_loop() ) : ?>
 
-        <?php woocommerce_product_loop_start(); ?>
+        <?php woocommerce_product_loop_start(); // Esto imprime el <ul class="products ..."> ?>
 
         <?php if ( wc_get_loop_prop( 'total' ) ) : ?>
             <?php while ( have_posts() ) : ?>
                 <?php the_post(); ?>
 
-                <li class="product-card">
-                    <?php wc_get_template_part( 'content', 'product' ); ?>
-                </li>
+                <?php
+                /*
+                 * Ya no lo envolvemos en un <li> extra.
+                 * Esta función de abajo ya imprime el <li>.
+                 */
+                wc_get_template_part( 'content', 'product' ); 
+                ?>
 
             <?php endwhile; ?>
         <?php endif; ?>
 
-        <?php woocommerce_product_loop_end(); ?>
-
-        <!-- Navegación -->
-        <div class="pagination-container">
-            <?php woocommerce_pagination(); ?>
-        </div>
+        <?php woocommerce_product_loop_end();?>
 
     <?php else : ?>
         <?php wc_get_template( 'loop/no-products-found.php' ); ?>
