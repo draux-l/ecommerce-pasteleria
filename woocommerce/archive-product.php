@@ -56,6 +56,7 @@ get_header( 'shop' );
             <?php woocommerce_page_title(); ?>
         </h1>
         <p class="product-count">
+            <?php global $wp_query; ?>
             <?php echo $wp_query->found_posts; ?> productos disponibles
         </p>
     </section>
